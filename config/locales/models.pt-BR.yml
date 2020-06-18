@@ -4,11 +4,16 @@ pt-BR:
       admin:
         one: Administrador
         other: Administradores
-      profile:
-        one: Perfil
-        other: Perfis
+      user:
+        one: Usuario
+        other: Usuarios
     attributes:
       admin:
+        id: Codigo
+        email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
+      user:
         id: Codigo
         email: Email
         created_at: Criado em
