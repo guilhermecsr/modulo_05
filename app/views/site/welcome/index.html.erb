@@ -1,2 +1,21 @@
 <h1>Site::Welcome#index</h1>
 <p>Find me in app/views/site/welcome/index.html.erb</p>
+
+
+<% if admin_signed_in? %>
+  <p>CORRE QUE O ADM TA ON</p>
+<% else %>
+  <p>TA LIBERADO A ZUEIRA [ADM OFF]</p>
+<% end %>
+
+<%= link_to 'ADM sign in', admins_backoffice_welcome_index_path %>
+
+<p>--------------------------</p>
+
+<% if user_signed_in? %>
+  <p>User Online</p>
+<% else %>
+  <p>User Offline</p>
+<% end %>
+
+<%= link_to 'User sign in', users_backoffice_welcome_index_path %>
