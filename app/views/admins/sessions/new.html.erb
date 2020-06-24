@@ -1,14 +1,14 @@
+<body class="admin">
 <div class="container">
-  <div class="row">
-    <div class="col-sm-3">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
 
       <h2>Log in - Admin</h2>
 
       <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
+        <div class="flash alert alert-danger <%= key %>"><%= value %></div>
       <% end %>
-    </div>
-    <div class="col-sm-3">
+
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email %><br />
@@ -27,7 +27,7 @@
           </div>
         <% end %>
 
-      
+
 
         <div class="actions">
           <%= f.submit "Log in", class: 'btn btn-primary' %>
@@ -40,3 +40,4 @@
     </div>
   </div>
 </div>
+</body>

@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TimeToAnswer</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>TimeToAnswer</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <h1>LAYOUT</h1>
-    <%= yield %>
-  </body>
+<body>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+
+      <h1>LAYOUT</h1>
+      <%= link_to 'Home', root_path, class:"btn btn-primary btn-sm" %>
+      <%= yield %>
+
+    </div>
+  </div>
+</div>
+</body>
 </html>

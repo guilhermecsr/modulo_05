@@ -9,8 +9,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-<h1>LAYOUT USER BACKOFFICE</h1>
-<%= yield %>
+<body class="user">
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+
+      <h1>LAYOUT USER BACKOFFICE</h1>
+      <%= yield %>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

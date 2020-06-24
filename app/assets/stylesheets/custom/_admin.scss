@@ -1,0 +1,22 @@
+html, body{
+  //@extend .bg-light;
+  font-family: Montserrat;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a:hover {
+  color: theme-color("primary");
+}
+
+a {
+  color: theme-color("primary");
+}

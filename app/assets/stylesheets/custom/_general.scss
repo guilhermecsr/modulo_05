@@ -1,0 +1,34 @@
+html, body{
+  //@extend .bg-light;
+  font-family: Montserrat;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin {
+  background-color: burlywood;
+}
+
+.user {
+  background-color: aliceblue;
+}
+
+.site {
+  background-color: seashell;
+}
+
+a:hover {
+  color: theme-color("primary");
+}
+
+a {
+  color: theme-color("primary");
+}

@@ -1,21 +1,31 @@
-<h1>Site::Welcome#index</h1>
-<p>Find me in app/views/site/welcome/index.html.erb</p>
+<body class="site">
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+
+      <h1>Site::Welcome#index</h1>
+      <p>Find me in app/views/site/welcome/index.html.erb</p>
 
 
-<% if admin_signed_in? %>
-  <p>CORRE QUE O ADM TA ON</p>
-<% else %>
-  <p>TA LIBERADO A ZUEIRA [ADM OFF]</p>
-<% end %>
+      <% if admin_signed_in? %>
+        <p>CORRE QUE O ADM TA <span style="color:green"> ON </span></p>
+      <% else %>
+        <p>TA LIBERADO A ZUEIRA <span style="color:red"> [ADM OFF] </span></p>
+      <% end %>
 
-<%= link_to 'ADM sign in', admins_backoffice_welcome_index_path %>
+      <%= link_to 'ADM sign in', admins_backoffice_welcome_index_path, class: 'btn btn-outline-primary' %>
 
-<p>--------------------------</p>
+      <p>--------------------------</p>
 
-<% if user_signed_in? %>
-  <p>User Online</p>
-<% else %>
-  <p>User Offline</p>
-<% end %>
+      <% if user_signed_in? %>
+        <p style="color:green">User Online</p>
+      <% else %>
+        <p style="color:red">User Offline</p>
+      <% end %>
 
-<%= link_to 'User sign in', users_backoffice_welcome_index_path %>
+      <%= link_to 'User sign in', users_backoffice_welcome_index_path, class: 'btn btn-outline-primary' %>
+
+    </div>
+  </div>
+</div>
+</body>
