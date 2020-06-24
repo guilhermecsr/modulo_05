@@ -1,6 +1,8 @@
 <h1>UsersBackoffice::Welcome#index</h1>
 <p>Find me in app/views/users_backoffice/welcome/index.html.erb</p>
 
+<%= current_user.email %>
+
 <p><%= link_to 'Fazer logoff [Usuario]', destroy_user_session_path, method: :delete, class:"btn btn-outline-danger" %></p>
 
 <%= link_to 'Home', root_path, class:"btn btn-outline-primary" %>
