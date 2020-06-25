@@ -1,23 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Home', root_path, class:"text-white" %>
+        </li>
+      </ul>
+
+      <span class="navbar-text text-white">
+        <h2><strong>Backoffice Administrativo</strong></h2>
+      </span>
+
+      <form class="form-inline my-2 my-lg-0">
+        <%= link_to 'Fazer logoff [ADM]', destroy_admin_session_path, method: :delete, class:"btn btn-danger btn-sm" %>
+      </form>
+    </div>
+  </nav>
+
   <title>TimeToAnswer</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+</header>
 
 <body class="admin">
+
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-
-<h1>Backoffice Administrativo</h1>
-<%= yield %>
-
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group">
+        <li class="list-group-item active">
+          Menu
+        </li>
+        <li class="list-group-item list-group-item-action">
+          <%= link_to 'Dashboard', admins_backoffice_welcome_index_path %>
+        </li>
+        <li class="list-group-item list-group-item-action">
+          <%= link_to 'Administradores', admins_backoffice_admins_index_path %>
+        </li>
+      </div>
     </div>
+
+    <div class="col-md-6">
+      <%= yield %>
+    </div>
+
   </div>
 </div>
 </body>

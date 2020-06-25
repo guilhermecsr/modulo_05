@@ -32,3 +32,18 @@ a:hover {
 a {
   color: theme-color("primary");
 }
+
+.navbar-text {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.navbar-nav,
+.navbar-right {
+  position: relative;
+  z-index: 99;
+}

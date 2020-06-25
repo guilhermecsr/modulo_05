@@ -1,0 +1,24 @@
+<h1>Listando Administradores</h1>
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Email</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @admins.each do |admin| %>
+    <tr>
+      <td><%= admin.id %></td>
+      <td><%= admin.email %></td>
+      <td>
+        <button type="button" class="btn btn-outline-primary">&#128221</button>
+        <button type="button" class="btn btn-outline-danger">&#9940</button>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
