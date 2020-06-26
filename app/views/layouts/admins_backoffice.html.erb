@@ -15,9 +15,11 @@
         <h2><strong>Backoffice Administrativo</strong></h2>
       </span>
 
-      <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
         <%= link_to 'Fazer logoff [ADM]', destroy_admin_session_path, method: :delete, class:"btn btn-danger btn-sm" %>
-      </form>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -42,7 +44,7 @@
           <%= link_to 'Dashboard', admins_backoffice_welcome_index_path %>
         </li>
         <li class="list-group-item list-group-item-action">
-          <%= link_to 'Administradores', admins_backoffice_admins_index_path %>
+          <%= link_to 'Administradores', admins_backoffice_admins_path %>
         </li>
       </div>
     </div>

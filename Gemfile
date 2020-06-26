@@ -41,6 +41,9 @@ gem 'devise'
 gem 'rails-i18n', '~> 5.1'
 gem 'tty-spinner'
 gem 'faker'
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'
+gem 'font_awesome5_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
