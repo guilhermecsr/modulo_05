@@ -11,10 +11,14 @@ pt-BR:
       admin:
         id: Codigo
         email: Email
+        password: Senha
+        password_confirmation: Confirmar Senha
         created_at: Criado em
         updated_at: Atualizado em
       user:
         id: Codigo
         email: Email
+        password: Senha
+        password_confirmation: Confirmar Senha
         created_at: Criado em
         updated_at: Atualizado em
