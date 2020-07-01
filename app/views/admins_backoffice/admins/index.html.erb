@@ -1,11 +1,11 @@
-<h1>Listando Administradores</h1>
+<h1><%= t('messages.listing', model: @admins.model_name.human(count: 2)) %></h1>
 
 
 <table class="table">
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">Email</th>
+    <th scope="col"><%= translate_field(@admins, :email) %></th>
     <th>
       <%= link_to  new_admins_backoffice_admin_path, class: "btn btn-outline-success btn-circle btn-lg" do %>
         <i class="fa fa-plus"></i>
@@ -23,7 +23,11 @@
           <i class="fa fa-edit"></i>
         <% end %>
 
-        <%= link_to admins_backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle btn-sm", data: {confirm: "Esta certo disso?"} do %>
+        <%= link_to admins_backoffice_admin_path(admin),
+                    method: :delete,
+                    class: "btn btn-danger btn-circle btn-sm",
+                    data: {confirm: t('messages.confirm_with',
+                    item: admin.email.truncate(15) )} do %>
           <i class="fa fa-minus"></i>
         <% end %>
       </td>

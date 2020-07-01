@@ -9,10 +9,10 @@
 
 <div class="row">
 
-  <% if @admin.errors.any? %>
+  <% if @subject.errors.any? %>
     <div class="alert alert-danger alert-dismissable" role="alert">
       <ul>
-        <% @admin.errors.full_messages.each do |message| %>
+        <% @subject.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -25,29 +25,19 @@
   <div class="col-lg-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <%= "#{action_message} #{t('messages.adm', count: 1)}" %>
+        <%= "#{action_message} #{t('messages.subject', count: 1)}" %>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-lg-9">
-            <%= form_with(model: [ :admins_backoffice, @admin ], local: true) do |form| %>
+            <%= form_with(model: [ :admins_backoffice, @subject ], local: true) do |form| %>
 
               <div class="form-group">
-                <%= form.label :email %>
-                <%= form.text_field :email, class: "form-control", placeholder: t('placeholder.admin_email') %>
+                <%= form.label :description %>
+                <%= form.text_field :description, class: "form-control", placeholder: t('placeholder.description_subject') %>
               </div>
 
-              <div class="form-group">
-                <%= form.label :password %>
-                <%= form.password_field :password, class: "form-control", placeholder: t('placeholder.password') %>
-              </div>
-
-              <div class="form-group">
-                <%= form.label :password_confirmation %>
-                <%= form.password_field :password_confirmation, class: "form-control", placeholder: t('placeholder.password_confirm') %>
-              </div>
-
-              <button type="submit" class="btn btn-primary"><%= t('buttons.save', model: @admin.email) %></button>
+              <button type="submit" class="btn btn-primary"><%= t('buttons.save', model: @subject.description) %></button>
             <% end %>
           </div>
           <!-- /.col-lg-6 (nested) -->

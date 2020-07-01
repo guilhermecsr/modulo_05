@@ -1,0 +1,16 @@
+'pt-BR':
+  messages:
+    listing: Listando %{model}
+    confirm_with: Esta certo disso? excluir "%{item}"
+    editing: Editando %{model}
+    new: Novo %{model}
+    add: Adicionando
+    question:
+      one: Pergunta
+      other: Perguntas
+    adm:
+      one: Administrador
+      other: Administradores
+    subject:
+      one: Assunto
+      other: Assuntos
