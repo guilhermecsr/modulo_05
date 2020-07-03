@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <%= f.label :description %>
+  </div>
+  <div class="card-body">
+    <div>
+    <%= f.text_area :description, cols: 45, rows: 2 %>
+    </div>
+    <%= link_to_remove_association('Remover Resposta', f, class: 'btn btn-danger btn-sm float-right')%>
+  </div>
+  <div class="card-footer text-muted">
+    <%= f.check_box :correct %> Correta?
+  </div>
+</div>
+<br>

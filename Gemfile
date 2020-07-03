@@ -47,6 +47,9 @@ gem 'font_awesome5_rails'
 gem 'pry'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem "cocoon"
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

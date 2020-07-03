@@ -23,6 +23,7 @@ cadastrada com sucesso!"
   end
 
   def edit
+    # @question = Question.find_by(params[:id])
   end
 
   def update
@@ -46,7 +47,8 @@ excluída com sucesso!"
   private
 
   def params_question
-    params.require(:question).permit(:description, :subject_id)
+    params.require(:question).permit(:description, :subject_id ,
+                                     answers_attributes: [:id, :description, :correct, :_destroy])
   end
 
   def set_question
