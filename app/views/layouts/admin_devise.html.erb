@@ -2,12 +2,7 @@
 <html>
 
 <head>
-  <% if controller.controller_path.include?("admin") %>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <% else %>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <% end %>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -37,26 +32,17 @@
       </li>
     </ul>
 
-    <% if controller.controller_path.include?("admin") %>
           <span class="navbar-text text-white">
             <h2><strong>Backoffice Administrativo</strong></h2>
           </span>
-    <% else %>
-          <span class="navbar-text text-white">
-            <h2><strong>Backoffice</strong></h2>
-          </span>
-    <% end %>
+
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <% if controller.controller_path.include?("admin") %>
           <%= link_to 'Fazer logoff [ADM]', destroy_admin_session_path,
                       method: :delete, class:"btn btn-danger btn-sm" %>
-        <% else %>
-          <%= link_to 'Fazer logoff', destroy_user_session_path,
-                      method: :delete, class:"btn btn-danger btn-sm" %>
-        <% end %>
       </li>
     </ul>
+
   </div>
   </nav>
 
@@ -72,16 +58,16 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-</head>
+  </head>
 
-<body>
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-md-12">
-      <%= yield %>
+  <body>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-12">
+        <%= yield %>
+      </div>
     </div>
   </div>
-</div>
-</body>
+  </body>
 
-</html>
+  </html>
