@@ -1,1 +1,5 @@
-<h1> <%= params[:answer] %></h1>
+<% if @answer.correct %>
+  <h1 style="color: green"> Acertou!</h1>
+<% else %>
+  <h1 style="color: red"> Errow! </h1>
+<% end %>
