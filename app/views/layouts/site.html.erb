@@ -36,18 +36,7 @@
 <body>
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-      <div class="jumbotron">
-        <% unless params[:term] %>
-          <h3>Últimas perguntas cadastradas...</h3>
-        <% else %>
-          <h3><%= "Resultados para \"#{params[:term]}\"..."%></h3>
-        <% end %>
-      </div>
-    </div>
-
     <%= yield %>
-
   </div>
 </div>
 </div>
