@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Home', root_path, class:"text-white nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="btn btn-outline-light text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to admins_backoffice_welcome_index_path, class: "dropdown-item" do %>
+              <i class="fa fa-bar-chart "> </i> <span>Dashboard</span>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to admins_backoffice_admins_path, class: "dropdown-item" do %>
+              <i class="fa fa-users"> </i> <span>Administradores</span>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to admins_backoffice_subjects_path, class: "dropdown-item" do %>
+              <i class="fa fa-file-text"> </i> <span>Assuntos e Areas</span>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to admins_backoffice_questions_path, class: "dropdown-item" do %>
+              <i class="fa fa-th-list"> </i> Perguntas
+            <% end %>
+          </div>
+        </li>
+      </ul>
+
+      <% if controller.controller_path.include?("admin") %>
+          <span class="navbar-text text-white">
+            <h2><strong>Backoffice Administrativo</strong></h2>
+          </span>
+      <% else %>
+          <span class="navbar-text text-white">
+            <h2><strong>Backoffice</strong></h2>
+          </span>
+      <% end %>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <%= link_to 'Fazer logoff', destroy_user_session_path,
+                      method: :delete, class:"btn btn-danger btn-sm" %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <title>TimeToAnswer</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700' %>
+  <%= javascript_include_tag 'application' %>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-12">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
