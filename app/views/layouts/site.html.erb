@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TimeToAnswer</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'User sign in', users_backoffice_welcome_index_path, class: 'btn btn-primary' %>
+        </li>
 
-<!--  < %= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>-->
+        <%= form_with(url: site_search_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>
+          <%= form.text_field :term, class:"form-control mr-sm-2", placeholder:"Search" %>
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+        <% end %>
+
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <%= link_to 'ADM sign in', admins_backoffice_welcome_index_path, class: 'btn btn-primary' %>
+        </li>
+      </ul>
+      <span class="navbar-text text-white">
+            <h2><strong>Home Page</strong></h2>
+          </span>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <!--  < %= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>-->
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700' %>
-<!--  < %= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>-->
+  <!--  < %= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>-->
 </head>
 
 <body>
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-auto">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
 
-<h1>LAYOUT SITE</h1>
-<%= yield %>
+          <h1 class="display-4">Site::Welcome#index</h1>
+          <p class="lead">
+
+            <% if admin_signed_in? %>
+            <p>CORRE QUE O ADM TA <span style="color:green"> ON </span></p>
+          <% else %>
+            <p>TA LIBERADO A ZUEIRA <span style="color:red"> [ADM OFF] </span></p>
+          <% end %>
+
+          <%= link_to 'ADM sign in', admins_backoffice_welcome_index_path, class: 'btn btn-outline-primary' %>
+
+          <p>--------------------------</p>
+
+          <% if user_signed_in? %>
+            <p style="color:green">User Online</p>
+          <% else %>
+            <p style="color:red">User Offline</p>
+          <% end %>
+
+          <%= link_to 'User sign in', users_backoffice_welcome_index_path, class: 'btn btn-outline-primary' %>
+
+          </p>
+        </div>
+      </div>
+
+      <%= yield %>
 
     </div>
   </div>
