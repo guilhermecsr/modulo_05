@@ -9,4 +9,8 @@ class Question < ApplicationRecord
             .where("lower(description) LIKE ?", "%#{term.downcase}%")
             .page(page).per(5)
   end
+
+  def self.last_questions(page)
+    @questions = Question.includes(:answers).order('created_at desc').page(page).per(5)
+  end
 end
