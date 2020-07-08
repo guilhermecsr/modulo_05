@@ -1,0 +1,81 @@
+<% if @user.errors.any? %>
+  <div class="alert alert-danger alert-dismissable" role="alert">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<%= form_with(url: users_backoffice_profile_path, method: :patch, model: @user , local: true) do |form| %>
+  <h2>Dados do Perfil</h2>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <div class="form-group">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <div class="form-group">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "form-control", readonly: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <div class="form-group">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <div class="form-group">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Enviar</button>
+<% end %>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>

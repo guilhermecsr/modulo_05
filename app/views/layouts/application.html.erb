@@ -64,7 +64,11 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to users_backoffice_welcome_index_path, class: "dropdown-item" do %>
-                <i class="fa fa-bar-chart "> </i> <span>Perfil</span>
+                <i class="fa fa-paper-plane "> </i> <span>Inicio</span>
+              <% end %>
+              <div class="dropdown-divider"></div>
+              <%= link_to users_backoffice_profile_path, class: "dropdown-item" do %>
+                <i class="fa fa-user "> </i> <span>Perfil</span>
               <% end %>
               <div class="dropdown-divider"></div>
               <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
