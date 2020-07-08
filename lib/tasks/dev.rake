@@ -104,7 +104,7 @@ namespace :dev do
   end
 
   def add_answers(answers_array = [])
-    rand(2..5).times do |j|
+    rand(4..5).times do |j|
       answers_array.push(create_answer_params)
     end
   end
