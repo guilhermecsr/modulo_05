@@ -11,7 +11,7 @@
     <div class="card" style="width: 50rem;">
       <div class="card-header">
         <span class="badge badge-info">
-          <%= link_to "#{question.subject.description} (#{question.subject.questions.count})",
+          <%= link_to "#{question.subject.description} (#{question.subject.questions_count})",
                       site_search_subject_path(question.subject_id, question.subject.description),
                       style: "color: white" %>
         </span>

@@ -1,8 +1,11 @@
 class Question < ApplicationRecord
-  belongs_to :subject, inverse_of: :questions
+  belongs_to :subject, counter_cache: true, inverse_of: :questions
   has_many :answers
   accepts_nested_attributes_for :answers, reject_if:
       :all_blank, allow_destroy: true
+
+  # Kaminari
+  paginates_per 3
 
   scope :_search_subject, ->(page, subject_id) {
     includes(:answers, :subject)
