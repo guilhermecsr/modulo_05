@@ -7,6 +7,7 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
 
   def update
     if @user.update(params_user)
+      sign_in(@user, bypass: true)
       redirect_to users_backoffice_profile_path, notice: "Usuario Atualizado com sucesso!"
     else
       render :edit
