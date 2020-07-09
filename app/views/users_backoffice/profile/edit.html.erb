@@ -40,6 +40,40 @@
     </div>
   </div>
 
+  <%= form.fields_for :user_profile do |profile_form| %>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <div class="form-group">
+          <%= profile_form.label :adress %>
+          <%= profile_form.text_field :adress, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= profile_form.label :gender, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div id="gender" class="btn-group" data-toggle="buttons">
+          <label class="btn <%= gender_select(@user, 'M') %>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+            <%= profile_form.radio_button :gender, "M", "data-parsley-multiple":"gender"%> &nbsp; Masculino &nbsp;
+          </label>
+          <label class="btn <%= gender_select(@user, 'F') %>" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+            <%= profile_form.radio_button :gender, "F", "data-parsley-multiple":"gender"%> &nbsp; Feminino &nbsp;
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <div class="form-group">
+          <%= profile_form.label :birthdate %>
+          <%= profile_form.date_field :birthdate, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <div class="form-group">
