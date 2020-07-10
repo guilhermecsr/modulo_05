@@ -12,3 +12,22 @@
     </h2>
   </div>
 </div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h2 class="display-8">Questoes Acertadas</h2>
+        <p class="lead"><%= @user_statistic.right_questions %></p>
+      </div>
+      <div class="col-sm">
+        <h2 class="display-8">Questoes Erradas</h2>
+        <p class="lead"><%= @user_statistic.wrong_questions %></p>
+      </div>
+      <div class="col-sm">
+        <h2 class="display-8">Total de Questoes</h2>
+        <p class="lead"><%= @user_statistic.total_questions %></p>
+      </div>
+    </div>
+  </div>
+</div>
