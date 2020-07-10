@@ -14,12 +14,20 @@
 
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <%= link_to 'Log in', users_backoffice_welcome_index_path, class: 'btn btn-primary' %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'Cadastrar-se',  new_user_registration_path, class: 'btn btn-info' %>
-        </li>
+        <% if !!current_user %>
+          <li class="nav-item active">
+            <%= link_to users_backoffice_welcome_index_path, class: "btn btn-light" do %>
+              <i class="fa fa-user "> </i> <span>Backoffice</span>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to 'Log in', users_backoffice_welcome_index_path, class: 'btn btn-primary' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'Cadastrar-se',  new_user_registration_path, class: 'btn btn-info' %>
+          </li>
+        <% end %>
       </ul>
       <span >
         <h1><strong><%= link_to 'Time to Answer', root_path, class:"navbar-text text-white" %></strong></h1>
