@@ -60,7 +60,7 @@
         <ul class="navbar-nav">
           <li>
             <div class=".mr-md-3">
-              <%= link_to image_tag('img.png', alt:"...", class:"img-circle profile_img", size: "42x42", id:"imgAvatarMd"), '#', "data-toggle":"modal", "data-target":"#avatarModal", style:"margin-right:5px" %>
+              <%= link_to image_tag(avatar_url, alt:"...", class:"img-circle profile_img", size: "42x42", id:"imgAvatarMd"), '#', "data-toggle":"modal", "data-target":"#avatarModal", style:"margin-right:5px" %>
 
             </div>
           </li>
@@ -117,30 +117,30 @@
 </div>
 
 <!-- Modal -->
-<!--<div class="modal fade" id="avatarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-<!--  <div class="modal-dialog modal-sm" role="document">-->
-<!--    <div class="modal-content">-->
-      <%#= form_with(url: users_backoffice_profile_path, model: current_user, class:"form-horizontal form-label-left") do |form| %>
-<!--        <div class="modal-header">-->
-<!--          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-<!--          <h4 class="modal-title" id="myModalLabel">Avatar</h4>-->
-<!--        </div>-->
-<!--        <div class="modal-body">-->
-          <%#= form.fields_for :user_profile do |profile_form|  %>
-<!--            <div class="form-group">-->
-              <%#= profile_form.label :avatar %>
-              <%#= image_tag(avatar_url, alt:"...", class:"img-circle profile_img", id:"imgAvatarLg") %>
-              <%#= profile_form.file_field :avatar %>
-<!--            </div>-->
-          <%# end %>
-<!--        </div>-->
-<!--        <div class="modal-footer">-->
-          <%#= form.submit "Salvar", class:"btn btn-primary" %>
-<!--        </div>-->
-      <%# end %>
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="modal fade" id="avatarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <%= form_with(url: users_backoffice_profile_path, model: current_user, local: true, class:"form-horizontal form-label-left") do |form| %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Avatar</h4>
+        </div>
+        <div class="modal-body">
+          <%= form.fields_for :user_profile do |profile_form|  %>
+            <div class="form-group">
+              <%= profile_form.label :avatar %>
+              <%= image_tag(avatar_url, alt:"...", class:"img-circle profile_img", id:"imgAvatarLg") %>
+              <%= profile_form.file_field :avatar %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <%= form.submit "Salvar", class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <!-- /Modal -->
 
 </body>

@@ -30,7 +30,7 @@
             </li>
           <% end %>
           <li style="list-style:none;">
-            <%= form.submit "Responder", class:"btn btn-default" %>
+            <%= form.submit "Responder", class:"btn btn-success btn-sm" %>
           </li>
         </ul>
       </div>
@@ -38,6 +38,17 @@
   <% end %>
 <% end %>
 
+<% if user_signed_in? %>
+
 <div class="float-none">
   <%= paginate @questions %>
 </div>
+<% else %>
+
+  <div class="alert alert-danger" role="alert">
+    <%= link_to 'Cadastrar-se',  new_user_registration_path, class: 'btn btn-success btn-sm' %>
+    para continuar respondendo!
+
+  </div>
+
+<% end %>

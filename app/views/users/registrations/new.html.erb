@@ -15,9 +15,11 @@
             <%= f.password_field :password_confirmation, placeholder:"Confirmação da senha", class:"form-control" %>
           </div>
           <div>
-            <%= f.submit "Entrar", class:"btn btn-success submit", style:"float: none; margin-left: 0px; width: 70%;" %>
+            <%= f.submit "Criar Cadastro", class:"btn btn-success submit", style:"float: none; margin-left: 0px; width: 70%;" %>
             <%= link_to 'Home', root_path, class:"text-primary text-decoration-none" %>
           </div>
+          <%= link_to 'Ja sou cadastrado!', users_backoffice_welcome_index_path %>
+
           <div class="clearfix"></div>
           <%= devise_error_messages! %>
           <div class="separator"></div>
