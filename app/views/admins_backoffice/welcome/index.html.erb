@@ -1,1 +1,16 @@
 <%= render partial: "layouts/admins_backoffice.html" %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h2 class="display-8">Total de Usuarios</h2>
+        <p class="lead"><%=  @total_users %></p>
+      </div>
+      <div class="col-sm">
+        <h2 class="display-8">Total de Questoes</h2>
+        <p class="lead"><%= @total_questions %></p>
+      </div>
+    </div>
+  </div>
+</div>
