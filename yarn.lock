@@ -16,3 +16,8 @@ popper.js@^1.16.1:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
   integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
+
+rails-ujs@^5.2.4-3:
+  version "5.2.4-3"
+  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.4-3.tgz#b2c428a03bec90e058f8938fb64ae194e7294db8"
+  integrity sha512-3UfULgTllMyO5B7gLxxjjvkVubha3FKiTzHY+4q3Hcku5A6Zbnc4kWxTuqL6s5r+ipwEx6Zddqz1DEpVLSbxbQ==
