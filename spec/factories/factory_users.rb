@@ -3,6 +3,7 @@ FactoryBot.define do
     sequence(:first_name) { |n| "name #{n}" }
     sequence(:last_name) { |n| "last #{n}" }
     sequence(:email) { |n| "test#{n}@test.com" }
-    encrypted_password { 'password' }
+    password { '123456' }
+    password_confirmation { '123456' }
   end
 end
