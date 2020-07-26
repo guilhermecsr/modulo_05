@@ -19,10 +19,17 @@ RSpec.describe User, type: :model do
 
   describe 'methods' do
     let!(:user) { FactoryBot.create :user }
-    before(:each) { user.full_name }
 
-    it 'user_full_name' do
-      expect(user.full_name).to eq "#{user.first_name} #{user.last_name}"
+    context 'nome_correto' do
+      it 'user_full_name' do
+        expect(user.full_name).to eq "#{user.first_name} #{user.last_name}"
+      end
+    end
+
+    context 'nome_incorreto' do
+      it 'user_full_name' do
+        expect(user.full_name).to_not eq "#{user.first_name}#{user.last_name}"
+      end
     end
   end
 end
