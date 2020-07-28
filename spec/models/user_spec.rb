@@ -2,6 +2,7 @@ RSpec.describe User, type: :model do
   describe 'associations' do
   let(:user) { FactoryBot.create :user }
   subject { user }
+
   it { is_expected.to have_one(:user_profile) }
   end
 
