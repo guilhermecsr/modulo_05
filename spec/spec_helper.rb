@@ -16,6 +16,7 @@
 
 ENV['RAILS_ENV'] ||= 'test'
 require 'rails_helper'
+require 'capybara/rspec'
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
