@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
           .to receive(:reset_password_token_present?).and_return(true)
     end
 
-    it { is_expected.to validate_presence_of(:first_name) }
+    # it { is_expected.to validate_presence_of(:first_name) } # apenas em update
     it { is_expected.to be_valid }
   end
 
