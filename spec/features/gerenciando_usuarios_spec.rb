@@ -1,7 +1,6 @@
 # spec/features/gerenciando_usuarios_spec.rb
 RSpec.feature 'Gerenciando usuários', type: :feature, order: :defined do
-  let!(:user){ FactoryBot.create :user }
-
+  criando_base_para_testes
   scenario 'Criando um usuário' do
     visit '/users/sign_up'
     sleep 1
@@ -32,9 +31,21 @@ RSpec.feature 'Gerenciando usuários', type: :feature, order: :defined do
     fill_in('user_password', with: user.password)
     sleep 1
     click_button 'Log in'
-    sleep 5
 
-    # binding.pry
     expect(page).to have_current_path('/')
+    expect(page).to_not have_content 'Cadastrar-se'
+    expect(page).to have_content 'Backoffice'
+  end
+
+  scenario 'Respondendo uma questao errada', js: true do
+    visit('/users/sign_in')
+    logando_com_user
+    visit('/')
+    choose(answer.description)
+    click_button 'Responder'
+
+    expect(page).to have_current_path('/site/answer')
+    expect(page).to_not have_content 'Acertou!'
+    expect(page).to have_content 'Errow!'
   end
 end
