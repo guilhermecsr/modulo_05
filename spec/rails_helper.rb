@@ -37,6 +37,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
 
+  config.include Warden::Test::Helpers
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -68,4 +69,20 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+def criando_base_para_testes
+  let(:subject) { FactoryBot.create :subject }
+  let(:question) { FactoryBot.create :question, subject_id: subject.id }
+  let!(:answer) { FactoryBot.create :answer, question: question }
+  let!(:user) { FactoryBot.create :user }
+  let!(:admin) { FactoryBot.create :admin }
+end
+def logando_com_admin
+  sleep 1
+  fill_in('admin_email', with: admin.email)
+  sleep 1
+  fill_in('admin_password', with: admin.password)
+  sleep 1
+  click_button 'Log in'
+  sleep 1
 end
