@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.feature 'Gerenciando usuários', type: :feature do
   criando_base_para_testes
   scenario 'Resgistrando um subject', js: true do

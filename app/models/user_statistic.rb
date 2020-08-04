@@ -3,7 +3,7 @@ class UserStatistic < ApplicationRecord
 
   # Virtual Attributes
   def total_questions
-    self.right_questions + self.wrong_questions
+    right_questions + wrong_questions
   end
 
   # Class Method

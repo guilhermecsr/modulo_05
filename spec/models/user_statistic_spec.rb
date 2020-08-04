@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe UserStatistic, type: :model do
   describe 'associations' do
     let(:user_statistic) { FactoryBot.create :user_statistic }

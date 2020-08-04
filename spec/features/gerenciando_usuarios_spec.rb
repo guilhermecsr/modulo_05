@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/features/gerenciando_usuarios_spec.rb
 RSpec.feature 'Gerenciando usuários', type: :feature, order: :defined do
   criando_base_para_testes

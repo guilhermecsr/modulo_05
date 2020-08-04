@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Site::AnswerController < SiteController
   def question
     @answer = Answer.find(params[:answer_id])

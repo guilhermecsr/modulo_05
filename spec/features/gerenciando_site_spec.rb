@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.feature 'Gerenciando Site', type: :feature do
   criando_base_para_testes
   scenario 'Acessando a home layout', js: true do

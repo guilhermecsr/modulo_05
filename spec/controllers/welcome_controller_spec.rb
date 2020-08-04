@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # RSpec.describe Welcome, type: :controller do
 #   describe 'welcome#create' do
 #     let(:user) { create :user }

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Limpa toda as tabelas antes de rodar qualquer teste
 # Isso é importante para permitir que os testes sejam
 # rodados sem um o uso do rake

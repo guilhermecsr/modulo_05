@@ -1,10 +1,10 @@
+# frozen_string_literal: true
+
 RSpec.configure do |config|
   config.before(:suite) do
-    begin
-      DatabaseCleaner.start
-# FactoryBot.lint # strategy: :build, traits: true
-    ensure
-      DatabaseCleaner.clean
-    end
+    DatabaseCleaner.start
+  # FactoryBot.lint # strategy: :build, traits: true
+  ensure
+    DatabaseCleaner.clean
   end
 end

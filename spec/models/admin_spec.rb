@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Admin, type: :model do
   describe 'associations' do
     let(:admin) { create :admin }
@@ -9,7 +11,7 @@ RSpec.describe Admin, type: :model do
     subject { admin }
     before(:each) do
       allow_any_instance_of(Admin)
-          .to receive(:reset_password_token_present?).and_return(true)
+        .to receive(:reset_password_token_present?).and_return(true)
     end
   end
 end

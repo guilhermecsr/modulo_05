@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Gerenciando Users', type: :request do
   describe 'requests' do
     describe '#index' do
@@ -11,9 +13,9 @@ RSpec.describe 'Gerenciando Users', type: :request do
         let!(:user) { FactoryBot.create :user }
         before do
           allow_any_instance_of(UsersBackofficeController)
-              .to receive(:authenticate_user!).and_return(true)
+            .to receive(:authenticate_user!).and_return(true)
           allow_any_instance_of(UsersBackoffice::WelcomeController)
-              .to receive(:current_user).and_return(user)
+            .to receive(:current_user).and_return(user)
           get users_backoffice_welcome_index_path
         end
 
@@ -33,9 +35,9 @@ RSpec.describe 'Gerenciando Users', type: :request do
 
         before(:each) do
           allow_any_instance_of(UsersBackofficeController)
-              .to receive(:authenticate_user!).and_return(true)
+            .to receive(:authenticate_user!).and_return(true)
           allow_any_instance_of(UsersBackofficeController)
-              .to receive(:current_user).and_return(user)
+            .to receive(:current_user).and_return(user)
           patch users_backoffice_profile_path(user.id),
                 params: { id: user.id, user: params }
         end

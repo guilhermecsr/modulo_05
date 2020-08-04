@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
-  before_action :set_question, only: [:edit, :update, :destroy]
-  before_action :get_subjects, only: [:new, :edit]
+  before_action :set_question, only: %i[edit update destroy]
+  before_action :get_subjects, only: %i[new edit]
 
   def index
     @questions = Question.includes(:subject)
@@ -47,8 +49,8 @@ excluída com sucesso!"
   private
 
   def params_question
-    params.require(:question).permit(:description, :subject_id ,
-                                     answers_attributes: [:id, :description, :correct, :_destroy])
+    params.require(:question).permit(:description, :subject_id,
+                                     answers_attributes: %i[id description correct _destroy])
   end
 
   def set_question

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.feature 'Gerenciando usuários', type: :feature do
   criando_base_para_testes
   scenario 'Logando um Adm', js: true do

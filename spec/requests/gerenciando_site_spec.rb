@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Gerenciando Site', type: :request do
   describe 'requests' do
     describe '#index' do

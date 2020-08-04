@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 RSpec.describe User, type: :model do
   describe 'associations' do
-  let(:user) { FactoryBot.create :user }
-  subject { user }
+    let(:user) { FactoryBot.create :user }
+    subject { user }
 
-  it { is_expected.to have_one(:user_profile) }
+    it { is_expected.to have_one(:user_profile) }
   end
 
   describe 'validations' do
@@ -11,7 +13,7 @@ RSpec.describe User, type: :model do
     subject { user }
     before(:each) do
       allow_any_instance_of(User)
-          .to receive(:reset_password_token_present?).and_return(true)
+        .to receive(:reset_password_token_present?).and_return(true)
     end
 
     # it { is_expected.to validate_presence_of(:first_name) } # apenas em update
@@ -20,10 +22,11 @@ RSpec.describe User, type: :model do
 
   describe 'methods' do
     let!(:user) { FactoryBot.create :user }
+    let(:name) { user.full_name }
 
     context 'nome_correto' do
       it 'user_full_name' do
-        expect(user.full_name).to eq "#{user.first_name} #{user.last_name}"
+        expect(name).to eq "#{user.first_name} #{user.last_name}"
       end
     end
 

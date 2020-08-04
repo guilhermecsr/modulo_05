@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersBackoffice::ProfileController < UsersBackofficeController
   before_action :verify_password, only: [:update]
   before_action :set_user
@@ -10,9 +12,9 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
     if @user.update(params_user)
       bypass_sign_in(@user)
       if params_user[:user_profile_attributes][:avatar].present?
-        redirect_to users_backoffice_welcome_index_path, notice: "Avatar Atualizado com sucesso!"
+        redirect_to users_backoffice_welcome_index_path, notice: 'Avatar Atualizado com sucesso!'
       else
-        redirect_to users_backoffice_profile_path, notice: "Usuario Atualizado com sucesso!"
+        redirect_to users_backoffice_profile_path, notice: 'Usuario Atualizado com sucesso!'
       end
     else
       render :edit
@@ -27,7 +29,7 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
 
   def params_user
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
-                                 user_profile_attributes: [:id, :adress, :gender, :birthdate, :avatar])
+                                 user_profile_attributes: %i[id adress gender birthdate avatar])
   end
 
   def verify_password

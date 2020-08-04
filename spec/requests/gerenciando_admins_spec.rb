@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Gerenciando Admins', type: :request do
   describe 'requests' do
     describe '#index' do
@@ -13,9 +15,9 @@ RSpec.describe 'Gerenciando Admins', type: :request do
         let!(:question) { FactoryBot.create :question }
         before do
           allow_any_instance_of(AdminsBackofficeController)
-              .to receive(:authenticate_admin!).and_return(true)
+            .to receive(:authenticate_admin!).and_return(true)
           allow_any_instance_of(AdminsBackoffice::WelcomeController)
-              .to receive(:current_admin).and_return(admin)
+            .to receive(:current_admin).and_return(admin)
           get admins_backoffice_welcome_index_path
         end
 

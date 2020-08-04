@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :verify_password, only: [:update]
-  before_action :set_admin, only: [:edit, :update, :destroy]
+  before_action :set_admin, only: %i[edit update destroy]
 
   def index
     @admins = Admin.all.page(params[:page]).per(5)
@@ -13,19 +15,18 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def create
     @admin = Admin.new(params_admin)
     if @admin.save
-      redirect_to admins_backoffice_admins_path, notice: "Adm Cadastrado com sucesso!"
+      redirect_to admins_backoffice_admins_path, notice: 'Adm Cadastrado com sucesso!'
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @admin.update(params_admin)
       AdminMailer.update_email(current_admin, @admin).deliver_now
-      redirect_to admins_backoffice_admins_path, notice: "Adm Atualizado com sucesso!"
+      redirect_to admins_backoffice_admins_path, notice: 'Adm Atualizado com sucesso!'
     else
       render :edit
     end
@@ -33,7 +34,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
 
   def destroy
     if @admin.destroy
-      redirect_to admins_backoffice_admins_path, notice: "Adm Excluido com sucesso!"
+      redirect_to admins_backoffice_admins_path, notice: 'Adm Excluido com sucesso!'
     else
       render :index
     end

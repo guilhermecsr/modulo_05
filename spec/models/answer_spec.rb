@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Answer, type: :model do
   describe 'associations' do
     let(:subject) { FactoryBot.create :subject }

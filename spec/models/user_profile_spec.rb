@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe UserProfile, type: :model do
   describe 'associations' do
     let(:user_profile) { FactoryBot.create :user_profile }
