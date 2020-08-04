@@ -9,6 +9,7 @@
         <%= form_with(url: site_search_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>
           <%= form.text_field :term, class:"form-control mr-sm-2", placeholder:"Search" %>
           <button class="btn btn-success btn-sqr fa fa-arrow-circle-right"
+                  id="search"
                   type="submit"></button>
         <% end %>
 
