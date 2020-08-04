@@ -34,3 +34,5 @@
 
 .idea/*
 .idea/
+
+/coverage/

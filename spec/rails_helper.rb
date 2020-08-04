@@ -9,6 +9,8 @@ require 'rspec/rails'
 require 'shoulda-matchers'
 # require 'capybara/rspec'
 require 'factory_bot_rails'
+require 'simplecov'
+SimpleCov.start
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

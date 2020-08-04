@@ -83,6 +83,7 @@ group :test do
   gem 'capybara-selenium'
   gem 'webdrivers', '~> 4.0'
   gem 'rspec-html-matchers'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

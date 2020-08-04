@@ -1,6 +1,6 @@
 RSpec.feature 'Gerenciando Site', type: :feature do
-  # let!(:admin) { FactoryBot.create :admin }
-  scenario 'Acessando a home', js: true do
+  criando_base_para_testes
+  scenario 'Acessando a home layout', js: true do
     visit '/'
     sleep 1
     expect(page).to_not have_content 'Backoffice'
