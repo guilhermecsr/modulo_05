@@ -31,14 +31,28 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
   end
 
   def destroy
-    if @subject.destroy
+    if errors_transaction.present?
       redirect_to admins_backoffice_subjects_path, notice: 'Assunto/Area Excluido com sucesso!'
     else
-      render :index
+      redirect_to admins_backoffice_subjects_path, alert: "Assunto nao excluido: #{@errors}"
     end
   end
 
   private
+
+  def errors_transaction
+    @errors = []
+    ActiveRecord::Base.transaction do
+      begin
+        # binding.pry
+        @destroyed = @subject.destroy
+      rescue StandardError => e
+        @errors << e.message
+        raise ActiveRecord::Rollback
+      end
+      @destroyed
+    end
+  end
 
   def params_subject
     params.require(:subject).permit(:description)
