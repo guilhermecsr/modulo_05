@@ -1,8 +1,23 @@
+require 'prawn'
 # frozen_string_literal: true
-
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :verify_password, only: [:update]
   before_action :set_admin, only: %i[edit update destroy]
+
+  def show
+    @admins = Admin.all
+    respond_to do |format|
+      # // some other formats like: format.html { render :show }
+      format.pdf do
+        Prawn::Document.new
+        pdf = TestePrawn.new(@admins)
+        send_data pdf.render,
+                  filename: "export.pdf",
+                  type: 'application/pdf',
+                  disposition: 'inline'
+      end
+    end
+  end
 
   def index
     @admins = Admin.all.page(params[:page]).per(5)

@@ -11,7 +11,7 @@
             <%= link_to 'Home', root_path, class:"text-white nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <a class="btn btn-outline-light text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-outline-light text-light dropdown-toggle" id="menu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Menu
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -108,6 +108,10 @@
 </head>
 
 <body>
+<div class="container mt-4">
+  <%= bootstrap_flash %>
+</div>
+
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-12">

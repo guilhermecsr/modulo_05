@@ -50,6 +50,10 @@ gem 'kaminari-i18n'
 gem 'pry'
 gem 'rails-i18n', '~> 5.1'
 gem 'tty-spinner'
+gem 'prawn'
+gem 'prawn-extras'
+gem 'prawn-table'
+gem 'prawn_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

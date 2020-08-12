@@ -27,7 +27,7 @@
                     method: :delete,
                     class: "btn btn-danger btn-circle btn-sm",
                     data: {confirm: t('messages.confirm_with',
-                    item: admin.email.truncate(15) )} do %>
+                                      item: admin.email.truncate(15) )} do %>
           <i class="fa fa-minus"></i>
         <% end %>
       </td>
@@ -35,7 +35,14 @@
   <% end %>
   </tbody>
 </table>
-
-<div class="float-none">
-  <%= paginate @admins %>
+<div class="container">
+  <div class="row">
+    <div class="float-none">
+      <%= paginate @admins %>
+    </div>
+    <div class="col-sm">
+      <%= link_to 'Baixar todos', admins_backoffice_admin_path(:id => 'show.pdf') %>
+    </div>
+  </div>
 </div>
+
